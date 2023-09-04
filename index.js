@@ -45,6 +45,10 @@ app.delete("/deleteUser/:id", (req,res)=>{
     .catch(err=> res.json(err))
 })
 
+app.get("/", (req, res) =>
+  res.send("Server Running Successfully!")
+);
+
 app.listen(3001, ()=>{
     console.log("Server is running on the port http://localhost:3001")
 })
