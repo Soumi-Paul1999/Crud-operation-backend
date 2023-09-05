@@ -4,14 +4,14 @@ const cors = require("cors");
 const dotenv = require("dotenv").config();
 const port = process.env.port || 8080
 const connectDB = require("./config/dbConnect")
-const UserModel = require("./models/UserModel")
 const userRoutes = require("./routes/userRoutes")
 
 connectDB();
 
 app.use(cors())
 app.use(express.json())
-app.use("/user",userRoutes);
+app.use("/",userRoutes);
+
 
 
 app.get("/", (req, res) =>
